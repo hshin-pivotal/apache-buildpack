@@ -1,6 +1,6 @@
-export APP_ROOT=/home/vcap/app
+export APACHE_ROOT=/home/vcap/app/httpd
 
-mv $APP_ROOT/httpd.conf $APP_ROOT/httpd.conf.org
-erb $APP_ROOT/httpd.conf.org > $APP_ROOT/httpd.conf
-(tail $APP_ROOT/httpd/logs/*log &)
-exec $APP_ROOT/httpd/bin/httpd -f $APP_ROOT/httpd.conf -DFOREGROUND
+mv $APACHE_ROOT/conf/httpd.conf $APACHE_ROOT/conf/httpd.conf.org
+erb $APACHE_ROOT/conf/httpd.conf.org > $APACHE_ROOT/conf/httpd.conf
+(tail $APACHE_ROOT/logs/*log &)
+exec $APACHE_ROOT/bin/httpd -DFOREGROUND
