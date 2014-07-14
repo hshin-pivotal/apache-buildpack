@@ -25,8 +25,9 @@ mkdir -p $compile_cache_dir/custom
 mv * $compile_cache_dir/custom
 mv $compile_cache_dir/custom .
 tar -xzf $httpd_tgz
-
+ls httpd
 [[ -f public/httpd.conf ]] && mv custom/httpd.conf httpd/conf/httpd.conf
+head httpd/conf/httpd.conf
 [[ -f public/httpd-vhosts.conf ]] && mv custom/httpd.conf httpd/conf/httpd-vhosts.conf
 cp $compile_buildpack_bin/boot.sh .
 # ------------------------------------------------------------------------------------------------
