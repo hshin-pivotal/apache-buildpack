@@ -22,6 +22,7 @@ cd $compile_build_dir
 
 echo "-----> Doing work with compiling."
 mkdir -p $compile_cache_dir/custom
+echo $compile_cache_dir
 mv * $compile_cache_dir/custom
 mv $compile_cache_dir/custom .
 tar -xzf $httpd_tgz
